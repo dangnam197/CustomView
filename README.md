@@ -218,7 +218,8 @@ Vẽ phạm vi văn bản đã chỉ định, được chỉ định bởi start
 hàm này sẽ lưa Matrix hiện tại
 **restore**
 hàm này sẽ sét Matrix thành Matrix đã lưu cuối cùng
-#Path
+
+# Path
 Lớp Path đóng gói các đường dẫn hình học hỗn hợp (nhiều đường viền) bao gồm các đoạn thẳng, đường cong bậc hai và đường cong hình khối. Nó có thể được vẽ bằng canvas.drawPath(path, paint), được điền hoặc vuốt (dựa trên Phong cách của sơn) hoặc có thể được sử dụng để cắt hoặc vẽ văn bản trên đường dẫn.
 
 Các hàm để thêm hình nối tiêp tương tự các hàm vẽ ở trên điểm khác biệt là điểm đầu của hình mới vẽ là điểm vẽ cuối của hình hiện tại
