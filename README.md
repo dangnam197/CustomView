@@ -214,11 +214,32 @@ public void drawText (CharSequence text,
 ```
 Vẽ phạm vi văn bản đã chỉ định, được chỉ định bởi start / end, với gốc của nó tại (x, y), trong Paint được chỉ định. 
 
-** **
-```java
+**save**
+hàm này sẽ lưa Matrix hiện tại
+**restore**
+hàm này sẽ sét Matrix thành Matrix đã lưu cuối cùng
+#Path
+Lớp Path đóng gói các đường dẫn hình học hỗn hợp (nhiều đường viền) bao gồm các đoạn thẳng, đường cong bậc hai và đường cong hình khối. Nó có thể được vẽ bằng canvas.drawPath(path, paint), được điền hoặc vuốt (dựa trên Phong cách của sơn) hoặc có thể được sử dụng để cắt hoặc vẽ văn bản trên đường dẫn.
 
-```
-** **
-```java
+Các hàm để thêm hình nối tiêp tương tự các hàm vẽ ở trên điểm khác biệt là điểm đầu của hình mới vẽ là điểm vẽ cuối của hình hiện tại
 
+ngoài ra Path thêm một số hàm cần quan tâm
+**quadTo**
+```java
+public void quadTo (float x1, 
+                float y1, 
+                float x2, 
+                float y2)
 ```
+Thêm một bezier bậc hai từ điểm cuối cùng, tiếp cận điểm kiểm soát (x1, y1) và kết thúc tại (x2, y2). Nếu không có lệnh gọi moveTo () nào được thực hiện cho đường viền này, điểm đầu tiên sẽ tự động được đặt thành (0,0)
+
+**cubicTo**
+```java
+public void cubicTo (float x1, 
+                float y1, 
+                float x2, 
+                float y2, 
+                float x3, 
+                float y3)
+```
+Thêm một khối vuông từ điểm cuối cùng, tiếp cận các điểm kiểm soát (x1, y1) và (x2, y2) và kết thúc tại (x3, y3). Nếu không có lệnh gọi moveTo () nào được thực hiện cho đường viền này, điểm đầu tiên sẽ tự động được đặt thành (0,0).
